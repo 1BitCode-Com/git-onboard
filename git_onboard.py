@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Automate onboarding a local project to GitHub.
+Automate onboarding a local project to (GitHub, GitLab, Bitbucket).
 
 This script installs required prerequisites, manages SSH keys,
 and automates the git workflow for pushing a local project
@@ -267,10 +267,6 @@ def ensure_ssh_key(console: Console) -> Path:
     )
     Prompt.ask("Press Enter once you have added the key", default="Done")
     return pub_key_path
-
-
-# We removed the automatic SSH key upload functionality. Users must
-# manually add their public key to GitHub via the web interface.
 
 
 def run_git_command(args: List[str], cwd: Optional[Path] = None) -> None:
@@ -807,12 +803,12 @@ def detect_recovery_scenario(project_path: Path, config_defaults: Dict[str, str]
     remote_url = config_defaults.get("remote_url")
     if not remote_url:
         console.print("\nPlease provide information about your repository:", style="bold")
-        console.print("• If you have a GitHub repository URL, enter it below", style="blue")
+        console.print("• If you have a (GitHub, GitLab, Bitbucket) repository URL, enter it below", style="blue")
         console.print("• If you don't have a remote repository, just press Enter", style="blue")
         console.print("• If you're unsure, press Enter to proceed with local-only recovery", style="blue")
         
         remote_url = Prompt.ask(
-            "\nEnter GitHub repository clone URL (HTTPS or SSH) or press Enter if no remote exists", 
+            "\nEnter (GitHub, GitLab, Bitbucket) repository clone URL (HTTPS or SSH) or press Enter if no remote exists", 
             default=""
         ).strip()
     
@@ -971,8 +967,8 @@ def recover_local_only_repository(project_path: Path, config_defaults: Dict[str,
         return False
     
     safe_print("Successfully recovered local repository!", style="bold green")
-    console.print("Note: This is a local-only repository. To push to GitHub, create a remote repository first.", style="yellow")
-    console.print("You can create a repository on GitHub and then run: git remote add origin <URL>", style="blue")
+    console.print("Note: This is a local-only repository. To push to (GitHub, GitLab, Bitbucket), create a remote repository first.", style="yellow")
+    console.print("You can create a repository on (GitHub, GitLab, Bitbucket) and then run: git remote add origin <URL>", style="blue")
     logger.info("Local-only repository recovery completed successfully")
     return True
 
@@ -1027,7 +1023,7 @@ def recover_remote_exists_repository(project_path: Path, remote_url: str, config
     total_changes = len(modified_files) + len(new_files) + len(deleted_files)
     
     if total_changes == 0:
-        safe_print("No local changes detected; the project is already up to date on GitHub.", 
+        safe_print("No local changes detected; the project is already up to date on (GitHub, GitLab, Bitbucket).", 
                   style="green")
         console.print("However, local .git directory is missing. Initializing git repository...", style="yellow")
         
@@ -1058,7 +1054,7 @@ def recover_remote_exists_repository(project_path: Path, remote_url: str, config
     display_file_changes(modified_files, new_files, deleted_files)
     
     # Prompt user for recovery
-    if not Confirm.ask(f"Commit and push these {total_changes} changes to GitHub?", default=False):
+    if not Confirm.ask(f"Commit and push these {total_changes} changes to (GitHub, GitLab, Bitbucket)?", default=False):
         safe_print("Recovery cancelled by user.", style="yellow")
         return False
     
@@ -1414,7 +1410,7 @@ def prompt_gitignore_patterns(project_path: Path) -> List[str]:
 def parse_args() -> argparse.Namespace:
     """Define and parse command‑line arguments."""
     parser = argparse.ArgumentParser(
-        description="Automate onboarding of a local project folder to GitHub.",
+        description="Automate onboarding of a local project folder to (GitHub, GitLab, Bitbucket).",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -1515,9 +1511,6 @@ def main() -> None:
     # Ensure SSH key exists
     pub_key_path = ensure_ssh_key(console)
     
-    # Do not attempt to upload SSH key automatically. The user should
-    # manually add the SSH key to their GitHub account.
-    
     # Initialize git repository
     initialize_repo(project_path)
     
@@ -1526,7 +1519,7 @@ def main() -> None:
     
     # Prompt user for remote URL
     remote_url = Prompt.ask(
-        "Enter GitHub repository clone URL (HTTPS or SSH)", default=""
+        "Enter (GitHub, GitLab, Bitbucket) repository clone URL (HTTPS or SSH)", default=""
     ).strip()
     if not remote_url:
         safe_print("No remote URL provided. Exiting.", style="red")
