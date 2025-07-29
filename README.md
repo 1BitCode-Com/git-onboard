@@ -12,6 +12,9 @@
 [![][Stars]](https://github.com/1BitCode-Com/git-onboard)
 [![][Forks]](https://github.com/1BitCode-Com/git-onboard)
 ![Python](https://img.shields.io/badge/-Python-red?style=flat&logo=python&logoColor=white)
+
+[![GitHub](https://img.shields.io/badge/GitHub-git--onboard-blue?style=flat-square&logo=github)](https://github.com/1BitCode-Com/git-onboard)
+[![GitLab](https://img.shields.io/badge/GitLab-git--onboard-orange?style=flat-square&logo=gitlab)](https://gitlab.com/1BitCode-Com/git-onboard)
 </div>
 
 > **Automate the onboarding of local project folders to (GitHub, GitLab, Bitbucket) with intelligent recovery capabilities…**
