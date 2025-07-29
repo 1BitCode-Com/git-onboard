@@ -16,9 +16,9 @@ Unit tests are included at the end of the file and can be run
 directly with pytest or the standard library `unittest` module.
 
 Usage:
-    python3 git-onboard.py [options]
+    python3 git_onboard.py [options]
 
-Run `python3 git-onboard.py --help` for a full list of
+Run `python3 git_onboard.py --help` for a full list of
 available command‑line options.
 """
 
