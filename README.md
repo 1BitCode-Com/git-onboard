@@ -14,9 +14,9 @@
 ![Python](https://img.shields.io/badge/-Python-red?style=flat&logo=python&logoColor=white)
 </div>
 
-> **Automate the onboarding of local project folders to GitHub with intelligent recovery capabilities…**
+> **Automate the onboarding of local project folders to (GitHub, GitLab, Bitbucket) with intelligent recovery capabilities…**
 
-**Git Onboard** is a Python script designed to streamline the process of pushing local project folders to GitHub. It handles everything from ensuring required tools are installed and generating SSH keys, to initializing a Git repository, committing your code, and pushing it to a remote repository—all through a friendly, interactive command‑line interface.
+**Git Onboard** is a Python script designed to streamline the process of pushing local project folders to (GitHub, GitLab, Bitbucket). It handles everything from ensuring required tools are installed and generating SSH keys, to initializing a Git repository, committing your code, and pushing it to a remote repository—all through a friendly, interactive command‑line interface.
 
 ## 🚀 New Features (Latest Update)
 
@@ -39,7 +39,7 @@
 ## Features
 
 - **Environment Preparation**: Detects and installs missing prerequisites (such as `git` and `ssh-keygen`) using the appropriate package manager (`apt`, `dnf`, `yum`, or `brew`).
-- **SSH Key Management**: Checks for an existing SSH key and generates one if needed, printing the public key for easy addition to your GitHub account.
+- **SSH Key Management**: Checks for an existing SSH key and generates one if needed, printing the public key for easy addition to your (GitHub, GitLab, Bitbucket) account.
 - **Git Repository Initialization**: Initializes the project directory as a Git repository if it isn't already.
 - **Custom `.gitignore` Support**: Interactively prompts you to specify directories, files, or file patterns (e.g., `*.mp3; report.pdf; *.jpeg`) that should be ignored by Git and appends them to a `.gitignore` file.
 - **Commit and Push Automation**: Stages all files, creates a commit with a message of your choice on a specified branch, and pushes to the remote repository.
@@ -75,7 +75,7 @@ python3 git_onboard.py
 ### From Source
 
 1. Clone or download this repository to your local machine.
-2. Ensure the script `git_onboard.py` is located at the root of your project directory (the folder you wish to push to GitHub).
+2. Ensure the script `git_onboard.py` is located at the root of your project directory (the folder you wish to push to GitHub, GitLab, Bitbucket).
 
 ### Using pip (when published)
 
@@ -117,7 +117,7 @@ The script will guide you through the following steps:
 3. **Initialize Repository**: Initializes a new Git repository in your project directory, if needed.
 4. **`.gitignore` Configuration**: Prompts you to specify any directories, files, or extensions you want Git to ignore (e.g. `node_modules/`, `dist/`, `*.mp3; report.pdf`), and updates/creates a `.gitignore` file accordingly.
 5. **Commit and Push**: Prompts you for a commit message and branch name (default is `main`), then stages and commits your changes.
-6. **Remote Setup**: Asks for the clone URL of your remote GitHub repository (SSH or HTTPS) and pushes your commit. Make sure you have created a repository on GitHub ahead of time and copy its clone URL.
+6. **Remote Setup**: Asks for the clone URL of your remote (GitHub, GitLab, Bitbucket) repository (SSH or HTTPS) and pushes your commit. Make sure you have created a repository on (GitHub, GitLab, Bitbucket) ahead of time and copy its clone URL.
 
 ### Recovery Scenarios
 
@@ -125,7 +125,7 @@ The script now handles two recovery scenarios:
 
 #### **Scenario 1: Remote Repository Exists**
 - Detects missing `.git` folder but local files exist
-- Prompts for GitHub repository URL
+- Prompts for (GitHub, GitLab, Bitbucket) repository URL
 - Verifies remote repository accessibility
 - Compares local files with remote
 - Stages only modified/new files
@@ -136,7 +136,7 @@ The script now handles two recovery scenarios:
 - Creates new local Git repository
 - Stages all files
 - Creates initial commit
-- Provides instructions for later GitHub setup
+- Provides instructions for later (GitHub, GitLab, Bitbucket) setup
 
 ### Command‑Line Options
 
@@ -162,11 +162,11 @@ You can create a configuration file (JSON or YAML) to set default values:
 }
 ```
 
-## Creating a GitHub Repository
+## Creating a (GitHub, GitLab, Bitbucket) Repository
 
-Before pushing, create a new repository on GitHub:
+Before pushing, create a new repository on (GitHub, GitLab, Bitbucket):
 
-1. Log in to GitHub and click **New Repository**.
+1. Log in to (GitHub, GitLab, Bitbucket) and click **New Repository**.
 2. Enter a repository name (e.g. `git-onboard`) and an optional description.
 3. Leave the options to add a README, `.gitignore`, or license unchecked (the script manages these).
 4. Click **Create repository**.
@@ -260,7 +260,7 @@ See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
 
 ---
 
-This script aims to automate the mundane parts of onboarding your project to GitHub, so you can focus on coding. If you find it useful or have suggestions, please let us know!
+This script aims to automate the mundane parts of onboarding your project to (GitHub, GitLab, Bitbucket), so you can focus on coding. If you find it useful or have suggestions, please let us know!
 
 <div align="center">
 
