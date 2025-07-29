@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-onboard"
+version = "1.0.0"
+description = "Automate onboarding of local project folders to GitHub with intelligent recovery capabilities"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "1BitCode-Com", email = "contact@1bitcode.com"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+requires-python = ">=3.7"
+keywords = ["git", "github", "automation", "onboarding", "repository", "cli"]
+
+[project.urls]
+Homepage = "https://github.com/1BitCode-Com/git-onboard"
+Repository = "https://github.com/1BitCode-Com/git-onboard"
+Documentation = "https://github.com/1BitCode-Com/git-onboard#readme"
+"Bug Tracker" = "https://github.com/1BitCode-Com/git-onboard/issues"
+
+[project.scripts]
+git-onboard = "git_onboard:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "flake8>=3.8",
+    "black>=21.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short" 

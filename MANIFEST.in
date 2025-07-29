@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include requirements.txt
+include .gitignore
+include git_onboard.py
+recursive-include tests *
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude *.log 
