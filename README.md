@@ -235,7 +235,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/YOUR_USERNAME/git-onboard.git
+git clone https://github.com/1BitCode-Com/git-onboard.git
 cd git-onboard
 
 # Install in development mode
